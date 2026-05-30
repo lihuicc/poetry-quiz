@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>诗与远方 · 答题系统</title>
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest_new.json">
 <meta name="theme-color" content="#1976d2">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -323,7 +323,7 @@ function render(idx) {
   }
 
   document.getElementById('card').innerHTML = `
-    <div class="tag">${q.type}<span id="timer" class="timer" style="display:none">⏱ ${TIMER_SECONDS}s</span></div>
+    <div class="tag">${q.type}<span id="timer" class="timer" ${answered ? 'style="display:none"' : ''}>⏱ ${TIMER_SECONDS}s</span></div>
     <div class="stem">${q.stem}</div>
     ${q.image ? `<img class="question-img" src="${q.image}">` : ''}
     ${bodyHtml}
@@ -356,7 +356,7 @@ function render(idx) {
     });
   }
 
-  if (!answered) {/* startTimer(); */}
+  if (!answered) startTimer();
   updateNav();
 }
 
