@@ -1,5 +1,5 @@
-const CACHE = 'shiyuanfang-v1';
-const ASSETS = ['./quiz.html', './manifest.json'];
+const CACHE = 'shiyuanfang-v2';
+const ASSETS = ['./quiz_new.html', './manifest.json'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
   self.skipWaiting();
